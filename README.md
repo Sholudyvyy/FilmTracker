@@ -63,7 +63,7 @@ cd VRBTestTask
 ```bash
 cd server
 npm install
-make .env file with DB url
+make .env file with DB_URI
 npm start or npm run dev for development
 ```
 
