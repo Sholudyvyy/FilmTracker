@@ -55,7 +55,7 @@ The application features an intuitive and responsive interface that works seamle
 
 1. Clone the repository
 ```bash
-https://github.com/Sholudyvyy/VRBTestTask.git
+git clone https://github.com/Sholudyvyy/VRBTestTask.git
 cd VRBTestTask
 ```
 
