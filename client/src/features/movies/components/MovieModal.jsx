@@ -7,7 +7,7 @@ import { createMovieThunk, editMovieThunk } from "../moviesSlice";
 
 import { Modal } from "components/base/Modal";
 import { ModalInput } from "components/base/Modallnput";
-import { ModalFields } from "constans/modalFields";
+import { modalFields } from "constans/modalFields";
 
 export const MovieModal = ({ setActive, movie }) => {
   const [movieInfo, setMovieInfo] = useState({
@@ -60,7 +60,7 @@ export const MovieModal = ({ setActive, movie }) => {
       confirm={handleConfirm}
     >
       <div className="max-h-[70vh] overflow-y-auto space-y-4 p-6">
-        {ModalFields.map((field) => (
+        {modalFields.map((field) => (
           <ModalInput
             placeholder={field.placeholder}
             value={movieInfo[field.fieldName]}

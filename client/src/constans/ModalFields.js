@@ -1,4 +1,4 @@
-export const ModalFields = [
+export const modalFields = [
   { placeholder: "Назва", fieldName: "title" },
   { placeholder: "Опис", fieldName: "description" },
   { placeholder: "Актори", fieldName: "actors" },
