@@ -26,17 +26,7 @@ export const deleteMovieThunk = createAsyncThunk(
 export const editMovieThunk = createAsyncThunk(
   "movies/editMovies",
   async ({ id, movieInfo }) => {
-    const response = await editMovie(
-      id,
-      movieInfo.title,
-      movieInfo.description,
-      movieInfo.actors,
-      movieInfo.director,
-      movieInfo.genre,
-      movieInfo.rating,
-      movieInfo.releaseDate,
-      movieInfo.image
-    );
+    const response = await editMovie(id, movieInfo);
     return response;
   }
 );
@@ -44,21 +34,8 @@ export const editMovieThunk = createAsyncThunk(
 export const createMovieThunk = createAsyncThunk(
   "movies/createMovieThunk",
   async ({ movieInfo }) => {
-    try {
-      const response = await createMovie(
-        movieInfo.title,
-        movieInfo.description,
-        movieInfo.actors,
-        movieInfo.director,
-        movieInfo.genre,
-        movieInfo.rating,
-        movieInfo.releaseDate,
-        movieInfo.image
-      );
-      return response;
-    } catch (error) {
-      throw error;
-    }
+    const response = await createMovie(movieInfo);
+    return response;
   }
 );
 

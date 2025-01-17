@@ -3,7 +3,7 @@ import { IoMdAddCircle } from "react-icons/io";
 import { SearchBar } from "components/base/SearchBar";
 import { SelectField } from "components/base/SelectField";
 
-import { genreOptions } from "constans/genreOptins";
+import { genreOptions } from "constans/genreOptions";
 import { ratingOptions } from "constans/ratingOptions";
 import PropTypes from "prop-types";
 

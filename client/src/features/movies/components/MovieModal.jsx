@@ -7,7 +7,7 @@ import { createMovieThunk, editMovieThunk } from "../moviesSlice";
 
 import { Modal } from "components/base/Modal";
 import { ModalInput } from "components/base/Modallnput";
-import { ModalFields } from "constans/ModalFields";
+import { ModalFields } from "constans/modalFields";
 
 export const MovieModal = ({ setActive, movie }) => {
   const [movieInfo, setMovieInfo] = useState({
@@ -55,7 +55,7 @@ export const MovieModal = ({ setActive, movie }) => {
     <Modal
       setActive={setActive}
       title={movie?.title || "Додати фільм"}
-      confirmText="Редагувати"
+      confirmText="Зберегти"
       rejectText="Відхилити"
       confirm={handleConfirm}
     >

@@ -27,7 +27,7 @@ export const HomePage = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <MoviesHeader setCreateActive={setCreateActive} />
 
-      <MoviesList setEditActive={setEditActive} setEditMovie={setEditMovie} />
+      <MoviesList setEditActive={setEditActive} setEditMovie={setEditMovie}/>
 
       {editActive && (
         <MovieModal setActive={setEditActive} movie={editMovie}></MovieModal>

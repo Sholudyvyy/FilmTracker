@@ -20,48 +20,34 @@ export const deleteMovieById = async (id) => {
 };
 
 export const createMovie = async (
-  title,
-  description,
-  actors,
-  director,
-  genre,
-  rating,
-  releaseDate,
-  image
+  movieInfo
 ) => {
   const response = await axiosInstance.post(`/movies`, {
-    title: title,
-    description: description,
-    actors: actors,
-    director: director,
-    genre: genre,
-    rating: rating,
-    releaseDate: releaseDate,
-    image: image,
+    title: movieInfo.title,
+    description: movieInfo.description,
+    actors: movieInfo.actors,
+    director: movieInfo.director,
+    genre: movieInfo.genre,
+    rating: movieInfo.rating,
+    releaseDate: movieInfo.releaseDate,
+    image: movieInfo.image,
   });
   return response.data;
 };
 
 export const editMovie = async (
   id,
-  title,
-  description,
-  actors,
-  director,
-  genre,
-  rating,
-  releaseDate,
-  image
+  movieInfo
 ) => {
   const response = await axiosInstance.put(`/movies/${id}`, {
-    title: title,
-    description: description,
-    actors: actors,
-    director: director,
-    genre: genre,
-    rating: rating,
-    releaseDate: releaseDate,
-    image: image,
+    title: movieInfo.title,
+    description: movieInfo.description,
+    actors: movieInfo.actors,
+    director: movieInfo.director,
+    genre: movieInfo.genre,
+    rating: movieInfo.rating,
+    releaseDate: movieInfo.releaseDate,
+    image: movieInfo.image,
   });
   return response.data;
 };
