@@ -64,7 +64,9 @@ cd VRBTestTask
 cd server
 npm install
 make .env file with DB_URI
-npm start or npm run dev for development
+npm start
+or
+npm run dev (for development)
 ```
 
 3. Start client
