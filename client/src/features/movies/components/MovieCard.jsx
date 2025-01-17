@@ -1,13 +1,16 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
 import { MdFavoriteBorder } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { deleteMovieThunk } from "../features/movies/moviesSlice";
-import { isMovieInFavorites } from "../utils/isMovieInFavorites";
-import { useState } from "react";
-import { toggleFavorite } from "../utils/toggleFavorite";
+
+import { deleteMovieThunk } from "../moviesSlice";
+import { toggleFavorite } from "../../../utils/toggleFavorite";
+import { isMovieInFavorites } from "../../../utils/isMovieInFavorites";
 
 export const MovieCard = ({ movie, setEditActive, setEditMovie }) => {
   const dispatch = useDispatch();
@@ -70,4 +73,10 @@ export const MovieCard = ({ movie, setEditActive, setEditMovie }) => {
       </div>
     </article>
   );
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.object,
+  setEditActive: PropTypes.func,
+  setEditMovie: PropTypes.func,
 };

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 export const Modal = ({
@@ -39,4 +40,13 @@ export const Modal = ({
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  title: PropTypes.string,
+  confirmText: PropTypes.string,
+  rejectText: PropTypes.string,
+  setActive: PropTypes.func,
+  confirm: PropTypes.func,
+  children: PropTypes.node
 };

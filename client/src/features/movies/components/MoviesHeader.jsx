@@ -1,8 +1,11 @@
 import { IoMdAddCircle } from "react-icons/io";
-import { SearchBar } from "./SearchBar";
-import { SelectField } from "./SelectField";
-import { ratingOptions } from "../utils/ratingOptions";
-import { genreOptions } from "../utils/genreOptins";
+
+import { SearchBar } from "components/base/SearchBar";
+import { SelectField } from "components/base/SelectField";
+
+import { genreOptions } from "constans/genreOptins";
+import { ratingOptions } from "constans/ratingOptions";
+import PropTypes from "prop-types";
 
 export const MoviesHeader = ({ setCreateActive }) => {
   return (
@@ -26,3 +29,8 @@ export const MoviesHeader = ({ setCreateActive }) => {
     </header>
   );
 };
+
+MoviesHeader.propTypes = {
+  setCreateActive: PropTypes.func,
+};
+

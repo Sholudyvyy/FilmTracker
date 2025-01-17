@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 import Select from "react-select";
+import PropTypes from "prop-types";
 
 export const SelectField = ({ placeholder, propsName, options }) => {
   const location = useLocation();
@@ -42,4 +43,10 @@ export const SelectField = ({ placeholder, propsName, options }) => {
       }}
     />
   );
+};
+
+SelectField.propTypes = {
+  placeholder: PropTypes.string,
+  propsName: PropTypes.string,
+  options: PropTypes.array,
 };

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const ModalInput = ({ placeholder, value, onChange }) => {
   return (
     <input
@@ -8,4 +10,10 @@ export const ModalInput = ({ placeholder, value, onChange }) => {
       onChange={onChange}
     />
   );
+};
+
+ModalInput.propTypes = {
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 };

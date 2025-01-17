@@ -18,69 +18,42 @@ export const loadMoviesThunk = createAsyncThunk(
 export const deleteMovieThunk = createAsyncThunk(
   "movies/deleteMovies",
   async ({ id }) => {
-    try {
-      const response = await deleteMovieById(id);
-      return response;
-    } catch (error) {
-      throw error;
-    }
+    const response = await deleteMovieById(id);
+    return response;
   }
 );
 
 export const editMovieThunk = createAsyncThunk(
   "movies/editMovies",
-  async ({
-    id,
-    title,
-    description,
-    actors,
-    director,
-    genre,
-    rating,
-    releaseDate,
-    image,
-  }) => {
-    try {
-      const response = await editMovie(
-        id,
-        title,
-        description,
-        actors,
-        director,
-        genre,
-        rating,
-        releaseDate,
-        image
-      );
-      return response;
-    } catch (error) {
-      throw error;
-    }
+  async ({ id, movieInfo }) => {
+    const response = await editMovie(
+      id,
+      movieInfo.title,
+      movieInfo.description,
+      movieInfo.actors,
+      movieInfo.director,
+      movieInfo.genre,
+      movieInfo.rating,
+      movieInfo.releaseDate,
+      movieInfo.image
+    );
+    return response;
   }
 );
 
 export const createMovieThunk = createAsyncThunk(
   "movies/createMovieThunk",
-  async ({
-    title,
-    description,
-    actors,
-    director,
-    genre,
-    rating,
-    releaseDate,
-    image,
-  }) => {
+  async ({ movieInfo }) => {
     try {
       const response = await createMovie(
-        title,
-        description,
-        actors,
-        director,
-        genre,
-        rating,
-        releaseDate,
-        image
+        movieInfo.title,
+        movieInfo.description,
+        movieInfo.actors,
+        movieInfo.director,
+        movieInfo.genre,
+        movieInfo.rating,
+        movieInfo.releaseDate,
+        movieInfo.image
       );
       return response;
     } catch (error) {
@@ -100,7 +73,6 @@ export const moviesSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-
     builder.addCase(loadMoviesThunk.pending, (state) => {
       state.hasError = false;
       state.isLoading = true;
@@ -116,10 +88,9 @@ export const moviesSlice = createSlice({
       state.hasError = true;
 
       toast.error(
-        "Не вдалося оновити список фільмів. Перевірте інтернет-з'єднання",
+        "Не вдалося оновити список фільмів. Перевірте інтернет-з'єднання"
       );
     });
-
 
     builder.addCase(deleteMovieThunk.fulfilled, (state, action) => {
       state.values = state.values.filter(
@@ -129,9 +100,7 @@ export const moviesSlice = createSlice({
     });
 
     builder.addCase(deleteMovieThunk.rejected, (state, action) => {
-      toast.error(
-        "Фільм не вдалося видалити. Перевірте інтернет-з'єднання",
-      );
+      toast.error("Фільм не вдалося видалити. Перевірте інтернет-з'єднання");
     });
 
     builder.addCase(editMovieThunk.fulfilled, (state, action) => {

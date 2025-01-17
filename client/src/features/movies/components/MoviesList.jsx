@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { MovieCard } from "./MovieCard";
 import { MoviesNotFound } from "./MoviesNotFound";
+import PropTypes from "prop-types";
 
 export const MoviesList = ({ setEditActive, setEditMovie }) => {
   const { values: movies, isLoading } = useSelector((state) => state.movies);
@@ -21,4 +22,9 @@ export const MoviesList = ({ setEditActive, setEditMovie }) => {
   ) : (
     <MoviesNotFound />
   );
+};
+
+MoviesList.propTypes = {
+  setEditActive: PropTypes.func,
+  setEditMovie: PropTypes.func,
 };

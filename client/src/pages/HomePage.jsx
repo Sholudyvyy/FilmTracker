@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useDispatch } from "react-redux";
-
-import { CreateModal } from "../components/CreateModal";
-import { EditModal } from "../components/EditModal";
-
 import { loadMoviesThunk } from "../features/movies/moviesSlice";
-import { MoviesHeader } from "../components/MoviesHeader";
-import { MoviesList } from "../components/MoviesList";
+import { MoviesHeader } from "../features/movies/components/MoviesHeader";
+import { MoviesList } from "../features/movies/components/MoviesList";
+import { MovieModal } from "../features/movies/components/MovieModal";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -33,16 +30,9 @@ export const HomePage = () => {
       <MoviesList setEditActive={setEditActive} setEditMovie={setEditMovie} />
 
       {editActive && (
-        <EditModal
-          setActive={setEditActive}
-          movie={editMovie}
-        ></EditModal>
+        <MovieModal setActive={setEditActive} movie={editMovie}></MovieModal>
       )}
-      {createActive && (
-        <CreateModal
-          setActive={setCreateActive}
-        ></CreateModal>
-      )}
+      {createActive && <MovieModal setActive={setCreateActive}></MovieModal>}
     </div>
   );
 };
