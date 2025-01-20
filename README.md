@@ -1,4 +1,4 @@
-# 📊 Movie library SPA
+# 📊 Full Stack Movie library SPA
 
 [Click here to see DEMO LINK](https://film-tracker-7uyhdcl94-stas-hohulias-projects.vercel.app)
 
