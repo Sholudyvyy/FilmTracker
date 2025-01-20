@@ -24,8 +24,6 @@ The application features an intuitive and responsive interface that works seamle
 
 ![](demo.gif)
 
-## ✨ Key Features
-
 ## 🛠 Tech Stack
 
 - **Frontend**: React
