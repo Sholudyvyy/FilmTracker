@@ -53,8 +53,8 @@ The application features an intuitive and responsive interface that works seamle
 
 1. Clone the repository
 ```bash
-git clone https://github.com/Sholudyvyy/VRBTestTask.git
-cd VRBTestTask
+git clone https://github.com/Sholudyvyy/FilmTracker.git
+cd FilmTracker
 ```
 
 2. Start server
